@@ -5,11 +5,12 @@ document.getElementById('surveyForm').addEventListener('submit', async function(
     const age = document.getElementById('age').value;
 
     try {
-        const response = await fetch('http://localhost:3000/api/submit', { // Fixed URL
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ fullName, age })
+        const response = await fetch('https://survey-xfmx.onrender.com/submit', {  
+            method: 'POST',  
+            headers: { 'Content-Type': 'application/json' },  
+            body: JSON.stringify({ fullName, age })  
         });
+        
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
